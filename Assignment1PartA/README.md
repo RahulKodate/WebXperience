@@ -26,9 +26,11 @@ Zip both the project in a single zip file and include your NUID in Remarks while
 AND, create the GitHub branch and commit the changes. Your git branch should have name as "NUID_<Your_Name>"
 
 Solution:
+
 For Assignment 1 Part A: I have Bulit a Coffee Shop Website with 3 pages
 1. Home page(Index page)
 2. About US page 
 3. Contact Us Page
 
-I have added Navigation Bar, Image and 
+I have added tags such as Navigation Bar, Images, Favicon, Table, Gif, Button, Hyperlinked Images and Gif. I have also addes header, body, footer. I have used css for background image for partA of Assignment1. I have also added a video for About us page.
+
