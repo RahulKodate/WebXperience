@@ -56,8 +56,8 @@ footer { font-size: 70%;
 #gallery span { display: none; }    
 #gallery a:hover span { display: block;
                         position: absolute;
-					    top: 100px; 
-						left: 200px;
+					    top: 15px; 
+						left: 10px;
 						text-align: center; }
 header, main, nav, footer, #gallery, #gallery img { display: block; }
 @media only screen and (max-width: 1024px) {
