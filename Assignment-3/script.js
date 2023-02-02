@@ -16,3 +16,15 @@ var socialMedia = {
 };
 
 var t = new Title("CONNECT WITH ME!");
+
+const table = document.getElementById("myTable");
+
+let countBoxPresent = 0;
+
+const checkRows = table.getElementsByClassName("input");
+hideOnStart();
+
+function hideOnStart(){
+  
+
+}
