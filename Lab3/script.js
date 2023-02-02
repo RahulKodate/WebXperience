@@ -5,17 +5,16 @@ function addNewRow() {
     var tbodyRef = document.getElementsByTagName("tbody")[0];
     var lastBook = 
         table.lastElementChild.lastElementChild?.firstElementChild?.nextElementSibling?.innerHTML || "Book 0";
-        console.log("lastBook", lastBook)
     var lastestIndex = lastBook.split(" ")[1];
-    console.log("lastestIndex", lastestIndex)
+    
 
     var tdNode = document.createElement("tr");
     var trCheckboxCell = document.createElement("td");
     trCheckboxCell.innerHTML=
-    '<input id="checkbox" type="checkbox" oneclick="onCheckboxClick(this)" />';
+    '<input id="checkbox" type="checkbox" oneclick="onCheckboxClick(this)"/>';
     var trBookCell = document.createElement("td");
     trBookCell.innerHTML = "Book" +(parseInt(lastestIndex) + 1);
-    console.log(trBookCell);
+ 
     var trAuthorCell = document.createElement("td");
     trAuthorCell.innerHTML = "Author" + (parseInt(lastestIndex) + 1);
 
@@ -30,6 +29,7 @@ function addNewRow() {
 }
 
 function onCheckboxClick(checkbox){
+     console.log(checkbox);
     var rowSelect = checkbox.parentElement.parentElement;
 
     if(checkbox.checked == true){
