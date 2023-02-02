@@ -87,13 +87,13 @@ function deleteRow(r) {
   const i = r.parentNode.parentNode.rowIndex;
   document.getElementById("myTable").deleteRow(i);
   document.getElementById("myTable").deleteRow(i);
-  alert(`Row Deleted!`);
+  alert(`Record of student deleted successfully..!!`);
   hideOnStart();
   selectRow();
 }
 
 function editRow(r) {
-  alert("Go ahead! edit the details");
+  prompt("Edit the details.");
   selectRow();
 }
 

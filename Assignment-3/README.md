@@ -24,7 +24,12 @@ d.	EDIT button in those de-selected rows will be hidden
 
 8.	Clicking on any of the green arrows will expand the particular row. Clicking it again will collapse it (i.e., toggle view on click)
 
+Solution:
 
+I have used an external Script file and external style and table css file. 
 
+All the above requirments have be fulfied. The table do not expand at start. When we click on checkbox button the row turns yellow and and delete and edit button shows up. We can also delete the row. The edit buttons gives a prompt. Also we can add new row using add new student button.
+
+Thank you.
  
 
