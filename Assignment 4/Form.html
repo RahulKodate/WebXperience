@@ -38,212 +38,249 @@
       }
   </style>
  </head>
- <body>
- <div id="container">
-	 
-	 <main>
-	 <h2>Feeback</h2>
-	 <h3>Love something? Hate something? Let us know!</h3>
-		 Note : Fields marked with an asterisk(*) are mandatory
-		 <br><br>
-		 <form id="myForm">
-			<label>Title*:</label>
-			<input
-			  type="radio"
-			  name="title"
-			  id="miss"
-			  value="miss"
-			  required="required"
-			/>Miss
-			<input
-			  type="radio"
-			  name="title"
-			  id="mr"
-			  value="mr"
-			  required="required"
-			/>Mr.
-			<input
-			  type="radio"
-			  name="title"
-			  id="mrs"
-			  value="mrs"
-			  required="required"
-			/>Mrs. <br /><br />
-			<label for="firstName">First Name*:</label>
-			<input
-			  type="text"
-			  name="firstName"
-			  id="firstName"
-			  placeholder="First Name"
-			/>
-			<br /><br />
-			<div id="error_firstName" style="display: none; color: red">
-			  Please Enter valid first name. First Name is mandatory
-			  <br /><br />
-			</div>
-  
-			<label for="lastName">Last Name*:</label>
-			<input
-			  type="text"
-			  name="lastName"
-			  id="lastName"
-			  placeholder="Last Name"
-			/>
-			<br /><br />
-			<div id="error_lastName" style="display: none; color: red">
-			  Please Enter valid last name. Last Name is mandatory
-			  <br /><br />
-			</div>
-  
-			<label for="emailId">Email Id*:</label>
-			<input
-			  type="text"
-			  name="emailId"
-			  id="emailId"
-			  placeholder="yourname@domain.com"
-			/>
-			<br /><br />
-			<div id="error_emailId" style="display: none; color: red">
-			  Please Enter valid amail address with @northeastern.edu. Email
-			  Address is mandatory
-			  <br /><br />
-			</div>
-  
-			<label for="phoneNumber">Phone Number*:</label>
-			<input
-			  type="text"
-			  name="phoneNumber"
-			  id="phoneNumber"
-			  placeholder="xxx-xxx-xxxx"
-			/>
-			<br /><br />
-			<div id="error_phoneNumber" style="display: none; color: red">
-			  Please Enter valid phone number. Phone Number is mandatory
-			  <br /><br />
-			</div>
-  
-			<label for="streetAddress1">Street Address 1*:</label>
-			<input
-			  type="text"
-			  name="streetAddress1"
-			  id="streetAddress1"
-			  placeholder="address"
-			/>
-			<br /><br />
-			<div id="error_streetAddress1" style="display: none; color: red">
-			  Please Enter valid street address 1. Street Address 1 is mandatory
-			  <br /><br />
-			</div>
-  
-			<label for="streetAddress2">Street Address 2:</label>
-			<input
-			  type="text"
-			  name="streetAddress2"
-			  id="streetAddress2"
-			  placeholder="address"
-			/>
-			<br /><br />
-  
-			<label for="city">City*:</label>
-			<input type="text" name="city" id="city" placeholder="city" />
-			<br /><br />
-			<div id="error_city" style="display: none; color: red">
-			  Please Enter valid city. City is mandatory
-			  <br /><br />
-			</div>
-  
-			<label for="state">State*:</label>
-			<input type="text" name="state" id="state" placeholder="state" />
-			<br /><br />
-			<div id="error_state" style="display: none; color: red">
-			  Please Enter valid state. State is mandatory
-			  <br /><br />
-			</div>
-  
-			<label for="zipcode">ZipCode*:</label>
-			<input
-			  type="text"
-			  name="zipcode"
-			  id="zipcode"
-			  placeholder="xxxxxx"
-			  maxlength="5"
-			/>
-			<br /><br />
-			<div id="error_zipcode" style="display: none; color: red">
-			  Please Enter valid zipcode. Zipcode is mandatory
-			  <br /><br />
-			</div>
-  
-			<label for="source">How did you hear*:</label>
-			<input type="checkbox" name="source" id="source" value="facebook" />
-			Facebook
-			<input type="checkbox" name="source" id="source" value="google" />
-			Google
-			<input type="checkbox" name="source" id="source" value="yelp" />
-			Yelp <br /><br />
-			<div id="error_source" style="display: none; color: red">
-			  Please check valid source. Source is mandatory
-			  <br /><br />
-			</div>
-  
-			<label for="drinks">Drinks*:</label>
-			<select id="myDrinkList">
-			  <option>---Please choose a drink---</option>
-			  <option>Hot Black Tea</option>
-			  <option>Cold Coffee</option>
-			  <option>Lemon Iced Tea</option>
-			  <option>Expresso</option>
-			  <option>Latte</option>
-			</select>
-			<br /><br />
-			<div id="error_drinks" style="display: none; color: red">
-			  Please select valid drinks. Drinks are mandatory
-			  <br /><br />
-			</div>
-  
-			<div id="dynamicCB" class="dynamicCB"><br /><br /></div>
-			<br />
-			<div id="additionalCustom" class="additionalCustom">
-			  <br />
-			  <label for="customisation"
-				>Any additonal <br />
-				customisation*:</label
-			  >
-			  <textarea
-				name="customisation"
-				id="customisation"
-				cols="30"
-				rows="10"
-			  ></textarea>
-			  <br />
-			  <br />
-			</div>
-			<div id="error_addComments" style="display: none; color: red">
-			  Please enter valid additional comments. Additional comments are
-			  mandatory
-			  <br /><br />
-			</div>
-  
-			<label for="comments">Comments*:</label>
-			<textarea
-			  name="text"
-			  id="comments"
-			  placeholder="Your comments"
-			  rows="5"
-			  cols="25"
-			></textarea>
-			<br /><br />
-			<div id="error_comments" style="display: none; color: red">
-			  Please Enter valid comments. Comments are mandatory
-			  <br /><br />
-			</div>
-  
-			<input type="Submit" />
-			<input type="Reset" />
-			<br /><br />
-		  </form>
-	 </main>
- </div>
+	<body>
+	<div id="container">
+		
+		<main>
+		<h2>Feeback</h2>
+		<h3>Love something? Hate something? Let us know!</h3>
+			Note : Fields marked with an asterisk(*) are mandatory
+			<br><br>
+			<form id="myForm">
+				<label>Title*:</label>
+				<input
+				type="radio"
+				name="title"
+				id="miss"
+				value="miss"
+				required="required"
+				/>Miss
+				<input
+				type="radio"
+				name="title"
+				id="mr"
+				value="mr"
+				required="required"
+				/>Mr.
+				<input
+				type="radio"
+				name="title"
+				id="mrs"
+				value="mrs"
+				required="required"
+				/>Mrs. <br /><br />
+				<label for="firstName">First Name*:</label>
+				<input
+				type="text"
+				name="firstName"
+				id="firstName"
+				placeholder="First Name"
+				/>
+				<br /><br />
+				<div id="error_firstName" style="display: none; color: red">
+				Please Enter valid first name. First Name is mandatory
+				<br /><br />
+				</div>
+	
+				<label for="lastName">Last Name*:</label>
+				<input
+				type="text"
+				name="lastName"
+				id="lastName"
+				placeholder="Last Name"
+				/>
+				<br /><br />
+				<div id="error_lastName" style="display: none; color: red">
+				Please Enter valid last name. Last Name is mandatory
+				<br /><br />
+				</div>
+	
+				<label for="emailId">Email Id*:</label>
+				<input
+				type="text"
+				name="emailId"
+				id="emailId"
+				placeholder="yourname@domain.com"
+				/>
+				<br /><br />
+				<div id="error_emailId" style="display: none; color: red">
+				Please Enter valid amail address with @northeastern.edu. Email
+				Address is mandatory
+				<br /><br />
+				</div>
+	
+				<label for="phoneNumber">Phone Number*:</label>
+				<input
+				type="text"
+				name="phoneNumber"
+				id="phoneNumber"
+				placeholder="xxx-xxx-xxxx"
+				/>
+				<br /><br />
+				<div id="error_phoneNumber" style="display: none; color: red">
+				Please Enter valid phone number. Phone Number is mandatory
+				<br /><br />
+				</div>
+	
+				<label for="streetAddress1">Street Address 1*:</label>
+				<input
+				type="text"
+				name="streetAddress1"
+				id="streetAddress1"
+				placeholder="address"
+				/>
+				<br /><br />
+				<div id="error_streetAddress1" style="display: none; color: red">
+				Please Enter valid street address 1. Street Address 1 is mandatory
+				<br /><br />
+				</div>
+	
+				<label for="streetAddress2">Street Address 2:</label>
+				<input
+				type="text"
+				name="streetAddress2"
+				id="streetAddress2"
+				placeholder="address"
+				/>
+				<br /><br />
+	
+				<label for="city">City*:</label>
+				<input type="text" name="city" id="city" placeholder="city" />
+				<br /><br />
+				<div id="error_city" style="display: none; color: red">
+				Please Enter valid city. City is mandatory
+				<br /><br />
+				</div>
+	
+				<label for="state">State*:</label>
+				<input type="text" name="state" id="state" placeholder="state" />
+				<br /><br />
+				<div id="error_state" style="display: none; color: red">
+				Please Enter valid state. State is mandatory
+				<br /><br />
+				</div>
+	
+				<label for="zipcode">ZipCode*:</label>
+				<input
+				type="text"
+				name="zipcode"
+				id="zipcode"
+				placeholder="xxxxxx"
+				maxlength="5"
+				/>
+				<br /><br />
+				<div id="error_zipcode" style="display: none; color: red">
+				Please Enter valid zipcode. Zipcode is mandatory
+				<br /><br />
+				</div>
+	
+				<label for="source">How did you hear*:</label>
+				<input type="checkbox" name="source" id="source" value="facebook" />
+				Facebook
+				<input type="checkbox" name="source" id="source" value="google" />
+				Google
+				<input type="checkbox" name="source" id="source" value="yelp" />
+				Yelp <br /><br />
+				<div id="error_source" style="display: none; color: red">
+				Please check valid source. Source is mandatory
+				<br /><br />
+				</div>
+	
+				<label for="drinks">Drinks*:</label>
+				<select id="myDrinkList">
+				<option>---Please choose a drink---</option>
+				<option>Hot Black Tea</option>
+				<option>Cold Coffee</option>
+				<option>Lemon Iced Tea</option>
+				<option>Expresso</option>
+				<option>Latte</option>
+				</select>
+				<br /><br />
+				<div id="error_drinks" style="display: none; color: red">
+				Please select valid drinks. Drinks are mandatory
+				<br /><br />
+				</div>
+	
+				<div id="dynamicCB" class="dynamicCB"><br /><br /></div>
+				<br />
+				<div id="additionalCustom" class="additionalCustom">
+				<br />
+				<label for="customisation"
+					>Any additonal <br />
+					customisation*:</label
+				>
+				<textarea
+					name="customisation"
+					id="customisation"
+					cols="30"
+					rows="10"
+				></textarea>
+				<br />
+				<br />
+				</div>
+				<div id="error_addComments" style="display: none; color: red">
+				Please enter valid additional comments. Additional comments are
+				mandatory
+				<br /><br />
+				</div>
+	
+				<label for="comments">Comments*:</label>
+				<textarea
+				name="text"
+				id="comments"
+				placeholder="Your comments"
+				rows="5"
+				cols="25"
+				></textarea>
+				<br /><br />
+				<div id="error_comments" style="display: none; color: red">
+				Please Enter valid comments. Comments are mandatory
+				<br /><br />
+				</div>
+	
+				<input type="Submit" />
+				<input type="Reset" />
+				<br /><br />
+			</form>
+		</main>
+	</div>
+
+	<div class="table-container">
+		<h2 class="table-header">Feedback Details:</h2>
+		<br />
+		<table id="tableData">
+		  <tr>
+			<th>Full Name</th>
+			<th>Email ID</th>
+			<th>Phone Number</th>
+			<th>Street Address 1</th>
+			<th>Street Address 2</th>
+			<th>City</th>
+			<th>State</th>
+			<th>Zip Code</th>
+			<th>Source</th>
+			<th>Drinks</th>
+			<th>Additional Customization</th>
+			<th>Comments</th>
+		  </tr>
+		  <tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		  </tr>
+		</table>
+		<br /><br />
+	  </div>
+
 
  <script>
  
