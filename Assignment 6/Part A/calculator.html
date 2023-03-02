@@ -49,7 +49,7 @@
   <body>
     <div id="container">
       <main>
-        <h2 style="text-align: center">Assignment 6 Part A</h2>
+        <h2 style="text-align: center">Assignment 6: Part A</h2>
         <h3 style="text-align: center" id="username"></h3>
         <fieldset>
           <legend>Calculator</legend>
@@ -74,14 +74,7 @@
             />
             <br /><br />
 
-            <!-- <label for="number3">Enter Number 3rd:</label>
-            <input
-              type="text"
-              name="number3"
-              id="number3"
-              placeholder="Enter a Third Number"
-            />
-            <br /><br /> -->
+            
             <input
               type="button"
               id="btnADD"
@@ -142,14 +135,12 @@
           // in 'messages' user have to specify message as per rules
           messages: {
             number1: {
-              required: " Please enter a number for 1st input",
+              required: " Kindly enter a number for 1st input",
             },
             number2: {
-              required: " Please enter a number for 2nd input",
+              required: " Kindly enter a number for 2nd input",
             },
-            // number3: {
-            //   required: " Please enter a number for 3rd input",
-            // },
+            
           },
         });
       });
@@ -183,13 +174,13 @@
       document.getElementById("username").innerHTML =
         "Welcome " +
         user +
-        " please enter the numbers below and perform any operation";
+        " kindly enter the numbers below to use calculator";
       var Operation = (operand) => {
         var regExName = /^[+-]?([0-9]*[.])?[0-9]+$/;
-        var x, y, z, ans;
+        var x, y, ans;
         console.log(operand);
         if (document.getElementById("number1").value.trim().length == 0) {
-          alert("Number 1st is empty");
+          alert("1st Number is empty");
           x = null;
           // x = 0;
         } else {
@@ -202,7 +193,7 @@
           }
         }
         if (document.getElementById("number2").value.trim().length == 0) {
-          alert("Number 2nd is empty");
+          alert("2nd Number is empty");
           y = null;
           // y = 0;
         } else {
@@ -214,39 +205,27 @@
             alert("Input type for Number 2 should be 'Number only'");
           }
         }
-        if (document.getElementById("number3").value.trim().length == 0) {
-          alert("Number 3rd is empty");
-          z = null;
-          // z = 0;
-        } else {
-          if (
-            document.getElementById("number3").value.trim().match(regExName)
-          ) {
-            z = parseFloat(document.getElementById("number3").value);
-          } else {
-            alert("Input type for Number 3 should be 'Number only'");
-          }
-        }
+        
         console.log(x);
         console.log(y);
-        console.log(z);
-        if (x != null && y != null && z != null) {
+        
+        if (x != null && y != null ) {
           if (operand == "+") {
-            ans = x + y + z;
-            console.log(x + y + z);
+            ans = x + y;
+            console.log(x + y);
           } else if (operand == "-") {
-            ans = x - y - z;
-            console.log(x - y - z);
+            ans = x - y;
+            console.log(x - y);
           } else if (operand == "*") {
-            ans = x * y * z;
-            console.log(x * y * z);
+            ans = x * y;
+            console.log(x * y);
           } else {
-            if (y == 0 || z == 0) {
+            if (x == 0 || y == 0) {
               alert("Division by zero is not possible");
               ans = "Infinity";
             } else {
-              ans = x / y / z;
-              console.log(x / y / z);
+              ans = x / y ;
+              console.log(x / y);
             }
           }
           // document.getElementById("number1").value = "";
