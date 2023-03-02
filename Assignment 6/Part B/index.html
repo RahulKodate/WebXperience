@@ -7,65 +7,68 @@
     <title>Assignment 6 Part B</title>
     <style>
       #container {
-        width: 1000px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        width: 1200px;
         margin: auto;
-        background-color: lightblue;
+        background-color: rgba(29, 93, 230, 0.892);
       }
       main {
-        padding: 50px;
+        padding: 40px;
       }
       body {
         text-align: center;
       }
 
       #stopwatch {
-        font-size: 130px;
-        font-weight: 700;
+        font-size: 200px;
+        font-weight: 500;
       }
 
       #stopwatch span {
         display: inline-block;
-        min-width: 150px;
+        min-width: 100px;
       }
 
       button {
-        padding: 16px 32px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin: 4px 2px;
-        transition-duration: 0.4s;
-        cursor: pointer;
-        background-color: white;
-        color: black;
-        border: 2px solid #555555;
-      }
-      button:hover {
-        background-color: #555555;
-        color: white;
-      }
+            padding: 16px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.2s;
+            cursor: pointer;
+            background-color: rgb(249, 249, 26);
+            color: black;
+            border: 2px solid #8c7e7e;
+          }
+          button:hover {
+            background-color: #3df8629f;
+            color: white;
+          }
     </style>
   </head>
   <body>
     <div id="container">
       <main>
-        <h2 style="text-align: center">Assignment 6 | Part B</h2>
-        <h3 style="text-align: center">Use the below Simple Stop Watch</h3>
+        <h2 style="text-align: center">Assignment 6: Part B</h2>
+        <h3 style="text-align: center">Kinldy use the Stop Watch</h3>
         <fieldset>
           <legend style="text-align: left">Stop Watch</legend>
           <br />
+          <div id="text-center">
+            <button id="startStopWatch">Start</button>
+            <button id="pauseStopWatch" disabled>Pause</button>
+            <button id="resetStopWatch" disabled>Reset</button>
+          </div>
+          <br>
           <label id="stopwatch">
             <span id="hours">00</span>:<span id="minutes">00</span>:<span
               id="seconds"
               >00</span
             >
           </label>
-          <div id="text-center">
-            <button id="startStopWatch">Start</button>
-            <button id="pauseStopWatch" disabled>Pause</button>
-            <button id="resetStopWatch" disabled>Reset</button>
-          </div>
+         
         </fieldset>
       </main>
     </div>
