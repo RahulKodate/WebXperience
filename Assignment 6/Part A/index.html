@@ -58,3 +58,121 @@
           }
         </style>
       </head>
+      <body>
+        <div id="container">
+          <main>
+            <h2 style="text-align: center">Assignment 6 | Part A</h2>
+            <h3 style="text-align: center">
+              Enter the below details and click on the submit button
+            </h3>
+            <fieldset>
+              <legend>Basic Form</legend>
+              <br />
+              <form id="myForm" action="./calculator.html" method="GET">
+                <p>
+                  <label>Email Id*:</label>
+                  <input
+                    type="text"
+                    id="emailId"
+                    name="emailId"
+                    placeholder="name@northeastern.edu"
+                  />
+                </p>
+    
+                <label for="userName">User Name*:</label>
+                <input
+                  type="text"
+                  name="userName"
+                  id="userName"
+                  placeholder="Enter a Username"
+                />
+                <br /><br />
+    
+                <label for="password">Password*:</label>
+                <input
+                  type="password"
+                  name="password"
+                  id="password"
+                  placeholder="Enter a Password"
+                />
+                <br /><br />
+                <input type="submit" value="Login" class="button" />
+                <br /><br />
+              </form>
+            </fieldset>
+          </main>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+        <!-- <script type="text/javascript" src="jquery.redirect.min.js"></script> -->
+        <script>
+          $(document).ready(function () {
+            $('form[id="myForm"]').validate({
+              // in 'rules' user have to specify all the constraints for respective fields
+              rules: {
+                emailId: {
+                  required: true,
+                  northeasternEmail: true,
+                },
+                userName: {
+                  required: true,
+                  minlength: 3, //for length of lastname
+                  userNameRegex: true,
+                },
+                password: {
+                  required: true,
+                  minlength: 8,
+                  passwordRegex: true,
+                },
+              },
+              // in 'messages' user have to specify message as per rules
+              messages: {
+                emailId: {
+                  required: " Please enter a Email Id",
+                },
+                userName: {
+                  required: " Please enter a username",
+                  minlength: " Your username must consist of at least 3 characters",
+                },
+                password: {
+                  required: " Please enter a password",
+                  minlength:
+                    " Your password must be consist of at least 8 characters",
+                },
+              },
+            });
+          });
+    
+          jQuery.validator.addMethod(
+            "northeasternEmail",
+            function (value, element) {
+              return this.optional(element) || /^.+@northeastern.edu$/.test(value);
+            },
+            " Please enter valid email id only '@northeastern.edu' email addresses"
+          );
+          jQuery.validator.addMethod(
+            "userNameRegex",
+            function (value, element) {
+              return (
+                this.optional(element) ||
+                /^(?=.{3,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$/.test(
+                  value
+                )
+              );
+            },
+            " Please enter valid username"
+          );
+          jQuery.validator.addMethod(
+            "passwordRegex",
+            function (value, element) {
+              return (
+                this.optional(element) ||
+                /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,16}$/.test(value)
+              );
+            },
+            " Passwords are 8-16 characters with uppercase letters, lowercase letters and at least one number"
+          );
+        </script>
+      </body>
+    </html>
