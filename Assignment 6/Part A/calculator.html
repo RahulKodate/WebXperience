@@ -1,60 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Assignment 6 | Part A</title>
+    <title>Assignment 6 Part A</title>
     <style>
-      #container {
-        width: 1000px;
-        margin: auto;
-        background-color: lightblue;
-      }
-      main {
-        padding: 50px;
-      }
-      .button {
-        padding: 16px 32px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin: 4px 2px;
-        transition-duration: 0.4s;
-        cursor: pointer;
-        background-color: white;
-        color: black;
-        border: 2px solid #555555;
-      }
-      .button:hover {
-        background-color: #555555;
-        color: white;
-      }
-      input[type="text"] {
-        width: 100%;
-        padding: 12px 20px;
-        margin: 8px 0;
-        box-sizing: border-box;
-        border: 3px solid #ccc;
-        -webkit-transition: 0.5s;
-        transition: 0.5s;
-        outline: none;
-      }
-
-      input[type="text"]:focus {
-        border: 3px solid #555;
-      }
+       #container {
+            font-family: sans-serif;
+            width: 1000px;
+            margin: auto;
+            background-color: rgba(29, 93, 230, 0.892);
+          }
+          main {
+            padding: 40px;
+          }
+          .button {
+            padding: 16px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.2s;
+            cursor: pointer;
+            background-color: rgb(249, 249, 26);
+            color: black;
+            border: 2px solid #8c7e7e;
+          }
+          .button:hover {
+            background-color: #3df8629f;
+            color: white;
+          }
+          input[type="text"] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 3px solid #1b237b;
+            -webkit-transition: 0.5s;
+            transition: 0.5s;
+            outline: none;
+          }
+    
+          input[type="text"]:focus {
+            border: 3px solid #882c2c;
+          }
+          
     </style>
   </head>
   <body>
     <div id="container">
       <main>
-        <h2 style="text-align: center">Assignment 6 | Part A</h2>
+        <h2 style="text-align: center">Assignment 6 Part A</h2>
         <h3 style="text-align: center" id="username"></h3>
         <fieldset>
-          <legend>Basic Calculator</legend>
+          <legend>Calculator</legend>
           <br />
           <form id="calcForm">
             <p>
-              <label for="number1">Enter Number 1st:</label>
+              <label for="number1">Enter 1st Number:</label>
               <input
                 type="text"
                 id="number1"
@@ -63,7 +65,7 @@
               />
             </p>
 
-            <label for="number2">Enter Number 2nd:</label>
+            <label for="number2">Enter 2nd Number:</label>
             <input
               type="text"
               name="number2"
@@ -72,14 +74,14 @@
             />
             <br /><br />
 
-            <label for="number3">Enter Number 3rd:</label>
+            <!-- <label for="number3">Enter Number 3rd:</label>
             <input
               type="text"
               name="number3"
               id="number3"
               placeholder="Enter a Third Number"
             />
-            <br /><br />
+            <br /><br /> -->
             <input
               type="button"
               id="btnADD"
@@ -145,9 +147,9 @@
             number2: {
               required: " Please enter a number for 2nd input",
             },
-            number3: {
-              required: " Please enter a number for 3rd input",
-            },
+            // number3: {
+            //   required: " Please enter a number for 3rd input",
+            // },
           },
         });
       });
@@ -159,7 +161,7 @@
             this.optional(element) || /^[+-]?([0-9]*[.])?[0-9]+$/.test(value)
           );
         },
-        " Please enter only valid numbers"
+        " Kindly enter only valid numbers"
       );
     </script>
     <script>

@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Assignment 6 | Part A</title>
+        <title>Assignment 6 Part A</title>
         <style>
           #container {
+            font-family: sans-serif;
             width: 1000px;
             margin: auto;
-            background-color: lightblue;
+            background-color: rgba(29, 93, 230, 0.892);
           }
           main {
-            padding: 50px;
+            padding: 40px;
           }
           .button {
             padding: 16px 32px;
@@ -18,14 +19,14 @@
             display: inline-block;
             font-size: 16px;
             margin: 4px 2px;
-            transition-duration: 0.4s;
+            transition-duration: 0.2s;
             cursor: pointer;
-            background-color: white;
+            background-color: rgb(249, 249, 26);
             color: black;
-            border: 2px solid #555555;
+            border: 2px solid #8c7e7e;
           }
           .button:hover {
-            background-color: #555555;
+            background-color: #3df863;
             color: white;
           }
           input[type="text"] {
@@ -33,44 +34,43 @@
             padding: 12px 20px;
             margin: 8px 0;
             box-sizing: border-box;
-            border: 3px solid #ccc;
+            border: 3px solid #1b237b;
             -webkit-transition: 0.5s;
             transition: 0.5s;
             outline: none;
           }
     
           input[type="text"]:focus {
-            border: 3px solid #555;
+            border: 3px solid #882c2c;
           }
           input[type="password"] {
             width: 100%;
             padding: 12px 20px;
             margin: 8px 0;
             box-sizing: border-box;
-            border: 3px solid #ccc;
+            border: 3px solid #1b237b;
             -webkit-transition: 0.5s;
             transition: 0.5s;
             outline: none;
           }
     
           input[type="password"]:focus {
-            border: 3px solid #555;
+            border: 3px solid #882c2c;
           }
         </style>
       </head>
       <body>
         <div id="container">
           <main>
-            <h2 style="text-align: center">Assignment 6 | Part A</h2>
+            <h2 style="text-align: center">Assignment 6: Part A</h2>
             <h3 style="text-align: center">
-              Enter the below details and click on the submit button
+              Kindly Fill in the details below!
             </h3>
             <fieldset>
-              <legend>Basic Form</legend>
-              <br />
+            
               <form id="myForm" action="./calculator.html" method="GET">
                 <p>
-                  <label>Email Id*:</label>
+                  <label>Email Id:</label>
                   <input
                     type="text"
                     id="emailId"
@@ -79,21 +79,21 @@
                   />
                 </p>
     
-                <label for="userName">User Name*:</label>
+                <label for="userName">User Name:</label>
                 <input
                   type="text"
                   name="userName"
                   id="userName"
-                  placeholder="Enter a Username"
+                  placeholder="Enter Your Username"
                 />
                 <br /><br />
     
-                <label for="password">Password*:</label>
+                <label for="password">Password:</label>
                 <input
                   type="password"
                   name="password"
                   id="password"
-                  placeholder="Enter a Password"
+                  placeholder="Enter Your Password"
                 />
                 <br /><br />
                 <input type="submit" value="Login" class="button" />
@@ -129,16 +129,16 @@
               // in 'messages' user have to specify message as per rules
               messages: {
                 emailId: {
-                  required: " Please enter a Email Id",
+                  required: "Kindly enter a Email Id",
                 },
                 userName: {
-                  required: " Please enter a username",
-                  minlength: " Your username must consist of at least 3 characters",
+                  required: " Kindly enter a username",
+                  minlength: " Username entered must consist of at least 3 characters",
                 },
                 password: {
-                  required: " Please enter a password",
+                  required: " Kindly enter a password",
                   minlength:
-                    " Your password must be consist of at least 8 characters",
+                    " Password entered must be consist of at least 8 characters",
                 },
               },
             });
@@ -149,7 +149,7 @@
             function (value, element) {
               return this.optional(element) || /^.+@northeastern.edu$/.test(value);
             },
-            " Please enter valid email id only '@northeastern.edu' email addresses"
+            " Kindly enter valid email id only '@northeastern.edu' email addresses"
           );
           jQuery.validator.addMethod(
             "userNameRegex",
@@ -161,7 +161,7 @@
                 )
               );
             },
-            " Please enter valid username"
+            " Kindly enter valid username"
           );
           jQuery.validator.addMethod(
             "passwordRegex",
@@ -171,7 +171,7 @@
                 /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,16}$/.test(value)
               );
             },
-            " Passwords are 8-16 characters with uppercase letters, lowercase letters and at least one number"
+            " Passwords must consist 8-16 characters with uppercase letters, lowercase letters and at least one number"
           );
         </script>
       </body>
