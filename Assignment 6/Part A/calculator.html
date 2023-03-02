@@ -44,5 +44,222 @@
       }
     </style>
   </head>
-  
+  <body>
+    <div id="container">
+      <main>
+        <h2 style="text-align: center">Assignment 6 | Part A</h2>
+        <h3 style="text-align: center" id="username"></h3>
+        <fieldset>
+          <legend>Basic Calculator</legend>
+          <br />
+          <form id="calcForm">
+            <p>
+              <label for="number1">Enter Number 1st:</label>
+              <input
+                type="text"
+                id="number1"
+                name="number1"
+                placeholder="Enter a First Number"
+              />
+            </p>
+
+            <label for="number2">Enter Number 2nd:</label>
+            <input
+              type="text"
+              name="number2"
+              id="number2"
+              placeholder="Enter a Second Number"
+            />
+            <br /><br />
+
+            <label for="number3">Enter Number 3rd:</label>
+            <input
+              type="text"
+              name="number3"
+              id="number3"
+              placeholder="Enter a Third Number"
+            />
+            <br /><br />
+            <input
+              type="button"
+              id="btnADD"
+              class="button"
+              value="Addition"
+              onclick="Operation('+')"
+            />
+            <input
+              type="button"
+              id="btnSUB"
+              class="button"
+              value="Subtraction"
+              onclick="Operation('-')"
+            />
+            <input
+              type="button"
+              id="btnMUL"
+              class="button"
+              value="Multiplication"
+              onclick="Operation('*')"
+            />
+            <input
+              type="button"
+              id="btnDIV"
+              class="button"
+              value="Division"
+              onclick="Operation('/')"
+            />
+            <!-- <input type="Reset" /> -->
+            <br /><br />
+
+            <label for="Result">Result:</label>
+            <div id="result"></div>
+          </form>
+        </fieldset>
+      </main>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#calcForm").validate({
+          // in 'rules' user have to specify all the constraints for respective fields
+          rules: {
+            number1: {
+              required: true,
+              no_type: true,
+            },
+            number2: {
+              required: true,
+              no_type: true,
+            },
+            number3: {
+              required: true,
+              no_type: true,
+            },
+          },
+          // in 'messages' user have to specify message as per rules
+          messages: {
+            number1: {
+              required: " Please enter a number for 1st input",
+            },
+            number2: {
+              required: " Please enter a number for 2nd input",
+            },
+            number3: {
+              required: " Please enter a number for 3rd input",
+            },
+          },
+        });
+      });
+
+      jQuery.validator.addMethod(
+        "no_type",
+        function (value, element) {
+          return (
+            this.optional(element) || /^[+-]?([0-9]*[.])?[0-9]+$/.test(value)
+          );
+        },
+        " Please enter only valid numbers"
+      );
+    </script>
+    <script>
+      var user = GetURLParameter("userName");
+
+      function GetURLParameter(sParam) {
+        var sPageURL = window.location.search.substring(1);
+        var sURLVariables = sPageURL.split("&");
+        for (var i = 0; i < sURLVariables.length; i++) {
+          var sParameterName = sURLVariables[i].split("=");
+          if (sParameterName[0] == sParam) {
+            return sParameterName[1];
+          }
+        }
+      }
+
+      // console.log(user);
+
+      document.getElementById("username").innerHTML =
+        "Welcome " +
+        user +
+        " please enter the numbers below and perform any operation";
+      var Operation = (operand) => {
+        var regExName = /^[+-]?([0-9]*[.])?[0-9]+$/;
+        var x, y, z, ans;
+        console.log(operand);
+        if (document.getElementById("number1").value.trim().length == 0) {
+          alert("Number 1st is empty");
+          x = null;
+          // x = 0;
+        } else {
+          if (
+            document.getElementById("number1").value.trim().match(regExName)
+          ) {
+            x = parseFloat(document.getElementById("number1").value);
+          } else {
+            alert("Input type for Number 1 should be 'Number only'");
+          }
+        }
+        if (document.getElementById("number2").value.trim().length == 0) {
+          alert("Number 2nd is empty");
+          y = null;
+          // y = 0;
+        } else {
+          if (
+            document.getElementById("number2").value.trim().match(regExName)
+          ) {
+            y = parseFloat(document.getElementById("number2").value);
+          } else {
+            alert("Input type for Number 2 should be 'Number only'");
+          }
+        }
+        if (document.getElementById("number3").value.trim().length == 0) {
+          alert("Number 3rd is empty");
+          z = null;
+          // z = 0;
+        } else {
+          if (
+            document.getElementById("number3").value.trim().match(regExName)
+          ) {
+            z = parseFloat(document.getElementById("number3").value);
+          } else {
+            alert("Input type for Number 3 should be 'Number only'");
+          }
+        }
+        console.log(x);
+        console.log(y);
+        console.log(z);
+        if (x != null && y != null && z != null) {
+          if (operand == "+") {
+            ans = x + y + z;
+            console.log(x + y + z);
+          } else if (operand == "-") {
+            ans = x - y - z;
+            console.log(x - y - z);
+          } else if (operand == "*") {
+            ans = x * y * z;
+            console.log(x * y * z);
+          } else {
+            if (y == 0 || z == 0) {
+              alert("Division by zero is not possible");
+              ans = "Infinity";
+            } else {
+              ans = x / y / z;
+              console.log(x / y / z);
+            }
+          }
+          // document.getElementById("number1").value = "";
+          // document.getElementById("number2").value = "";
+          // document.getElementById("number3").value = "";
+
+          document.getElementById(
+            "result"
+          ).innerHTML = `<input type="text" value="${ans.toFixed(
+            2
+          )}" class="field left" readonly>`;
+        }
+      };
+
+      Operation(operand);
+    </script>
+  </body>
 </html>
