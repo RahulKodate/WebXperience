@@ -1,0 +1,21 @@
+$light-color: yellow;
+$font-satch: Arial, Helvetica, sans-serif;
+// $primary-color: Purple;
+$primary-color: white;
+$secondary-color: orange;
+
+@function set-text-color($color){
+    @if(lightness($color)>70){
+        @return #333;
+    }
+    @else{
+        @return white;
+
+    }
+}
+
+//use mixin to set the background and text color
+@mixin set-background($color){
+    background-color: $color;
+    color: set-text-color($color);
+}
