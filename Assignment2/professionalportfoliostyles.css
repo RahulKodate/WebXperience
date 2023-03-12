@@ -1,0 +1,88 @@
+body { background-color: #fdf7e1; font-family: Georgia, 'Times New Roman', Times; }
+#wrapper { margin: 0 auto; 
+	width: 80%; 
+	min-width: 940px;
+	background-color: #425dbe; 
+	color: #FFFBEB; }
+header { background-color: #061c69; 
+	color: #FFFBEB; 
+	font-size: 250%;
+    text-align: right;
+	padding: 10px 10px 10px 155px; 
+	background-repeat: no-repeat;
+	background-image: url(portfolio.jpeg); 
+	height: 350px; }
+nav { float: right; 
+	width: 150px; 
+	font-weight: bold; 
+	letter-spacing: 0.1em; }
+main { background-color: #FFFFFF; 
+	color: #000000; 
+	display: block;
+	padding: 10px 20px; 
+	overflow: auto; }
+h2 { color: #275cbf; font-family: 'Times New Roman', Times, serif; }
+main img { float: right; margin: 10px; }
+main a:link {text-decoration: none;}
+nav a { text-decoration: none; 
+	padding: 20px; 
+	display: block;
+	background-color: #425dbe; 
+	border-bottom: 1px solid #FFFFFF;
+     }
+nav a:link { color: #FFFFFF; }
+nav a:visited { color: #EAEAEA; }
+nav a:hover { color: #869DC7;
+	background-color: #EAEAEA; 
+	background-position: right -100px;
+	}
+footer { font-size: 70%; 
+	text-align: center; 
+	padding: 10px;
+	background-color: #061c69; 
+	clear: both;}
+#gallery { position: relative; }
+#gallery ul { width: 1000px; 
+             list-style-type: none; }
+
+#gallery li { display: inline; 
+              float: left; 
+			  padding: 10px; }
+#gallery img { border-style: none; }
+#gallery a { text-decoration: none; 
+             color: rgb(34, 33, 33); 
+			 font-style: italic; }
+
+#gallery span { display: none; }    
+#gallery a:hover span { display: block;
+                        position: absolute;
+					    top: 15px; 
+						left: 10px;
+						text-align: center; }
+header, main, nav, footer, #gallery, #gallery img { display: block; }
+@media only screen and (max-width: 1024px) {
+	body { margin: 0; background-color: #f1f8ff;}
+	#wrapper { width: auto; margin: 0; }                                                              
+	main { margin-left: 0; }
+	nav { float: none; 
+          width: auto; }
+	nav a { display: inline-block; 
+               padding: 0.5em; }
+	nav ul { text-align: center; }
+	nav a { border-style: none; }
+	h1, h2 { font-size: 120%; }
+	p { font-size: 90%; }
+} 
+@media only screen and (max-width: 768px) {
+    #wrapper { min-width: 0; }
+    header { background-image: url(portfolio.jpeg); }
+	header h1 { padding-left: 0; }
+	h1, h2 { font-size: 100%; }
+	span { font-size: 80%; } 
+  	#gallery { display: inherit;}
+ 	nav, nav ul, nav li { padding: 0; }
+ 	nav li { display: block; }
+    nav a { display: block; 
+      	padding: 0.5em 0;
+        border-bottom: 2px ridge #00005D; }
+    }

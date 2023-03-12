@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <style>
+        label {
+            float: left;
+            width: 150px;
+        }
+        #container {
+            width: 700px;
+            margin: auto;
+            background-color: beige;
+        }
+        main {
+            padding: 50px;
+        }
+    </style>
+</head>
+
+<body id="container">
+    <main>
+        <h2>Feedback Form</h2>
+        <h3>Please provide your feedback</h3>
+        <br><br>
+
+        <form id="myForm">
+            <label>Title*:</label>
+            <input type="radio" name="title" id="miss" value="miss" required="required" /> Miss
+            <input type="radio" name="title" id="mr" value="mr" required="required" /> Mr.
+            <input type="radio" name="title" id="mrs" value="mrs" required="required" /> Mrs.
+            <br><br>
+
+            <label for="firstName">First Name*:</label>
+            <input type="text" name="firstName" id="firstName" placeholder="First Name" required>
+            <br><br>
+
+            <div id="error_firstName" style="display: none; color: red;">
+                Invalid First Name, Please enter valid first name
+                <br><br>
+            </div>
+
+            <label for="emailId">Email Id*:</label>
+            <input type="text" name="emailId" id="emailId" placeholder="yourname@domain.com" required>
+            <br><br>
+            
+            <div id="error_emailId" style="display: none; color: red;">
+                Invalid Email address, Please enter valid Email in user@domain.com
+                <br><br>
+            </div>
+
+
+            <label for="phoneNumber">Phone Number:</label>
+            <input type="text" name="phoneNumber" id="phoneNumber" placeholder="xxx-xxx-xxxx" required />
+            <br><br>
+
+            <div id="error_phoneNumber" style="display: none; color: red;">
+                Invalid phone number, Please enter valid phone number in xxx-xxx-xxxx format
+                <br><br>
+            </div>
+
+            <label for="comments">Comments:</label>
+            <textarea name="text" id="comments" placeholder="Your Comments" cols="30" rows="10" required></textarea>
+            <br><br>
+
+            <input type="Submit" value="Submit My Form">
+            <input type="Reset">
+            <br><br>
+
+        </form>
+    </main>
+
+    <script>
+        var form = document.getElementById("myForm");
+        form.addEventListener("submit", submitted);
+
+        // initially we are setting to false 
+        var validName = false;
+        var validEmail = false;
+        var validPhone = false;
+
+        // regular expressions for name, email and phone
+        var regExName = /^[a-zA-Z]+$/;
+        var regExEmail = /([\w\.]+)@([\w\.]+)\.(\w+)/;
+        var regExPhone = /\d{3}-?\d{3}-\d{4}$/;
+
+        //values firstName
+        var firstName = document.getElementById("firstName");
+        firstName.addEventListener("input", validate)
+
+
+        var emailId = document.getElementById("emailId");
+        emailId.addEventListener("input", validate)
+
+        var phoneNumber = document.getElementById("phoneNumber");
+        phoneNumber.addEventListener("input", validate)
+
+
+        //write a function submitted
+        function validate(e){
+            var value = e.target.value;
+            var type = this.id; //we are gettin ID of the field
+            var em = "error_" + type;
+
+            switch(type){
+                case "firstName":
+                    if(!value.trim().match(regExName)){
+                        document.getElementById(em).style.display = "block";
+                        this.style.border = "2px solid red";
+                        validName = false;
+                    }
+                    else{
+                        document.getElementById(em).style.display = "none";
+                        this.style.border = "";
+                        validName = true;
+                    }
+                    break;
+                case "emailId":
+                    if(!value.trim().match(regExEmail)){
+                        document.getElementById(em).style.display = "block";
+                        this.style.border = "2px solid red";
+                        validEmail = false;
+                    }
+                    else{
+                        document.getElementById(em).style.display = "none";
+                        this.style.border = "";
+                        validEmail = true;
+                    }
+                    break;
+                case "phoneNumber":
+                    if(!value.trim().match(regExPhone)){
+                        document.getElementById(em).style.display = "block";
+                        this.style.border = "2px solid red";
+                        validPhone = false;
+                    }
+                    else{
+                        document.getElementById(em).style.display = "none";
+                        this.style.border = "";
+                        validPhone = true;
+                    }
+                    break;
+
+            }
+        }
+
+        //write a function submitted
+        function submitted(e){
+            e.preventDefault();
+            if(validName && validEmail && validEmail){
+                alert("Data entered successful");
+                //window.location.href = "FeedbackComplete.html"
+
+            }
+            else{
+                alert("Please enter valid details");
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>

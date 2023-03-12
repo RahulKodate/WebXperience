@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Assignment 6 Part A</title>
+    <style>
+       #container {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            width: 800px;
+            margin: auto;
+            background-color: rgba(29, 93, 230, 0.892);
+          }
+          main {
+            padding: 40px;
+          }
+          .button {
+            padding: 16px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.2s;
+            cursor: pointer;
+            background-color: rgb(249, 249, 26);
+            color: black;
+            border: 2px solid #8c7e7e;
+          }
+          .button:hover {
+            background-color: #3df8629f;
+            color: white;
+          }
+          input[type="text"] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 3px solid #1b237b;
+            -webkit-transition: 0.5s;
+            transition: 0.5s;
+            outline: none;
+          }
+    
+          input[type="text"]:focus {
+            border: 3px solid #882c2c;
+          }
+          
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <main>
+        <h2 style="text-align: center">Assignment 6: Part A</h2>
+        <h3 style="text-align: center" id="username"></h3>
+        <fieldset>
+          <legend>Calculator</legend>
+          <br />
+          <form id="calcForm">
+            <p>
+              <label for="number1">Enter 1st Number:</label>
+              <input
+                type="text"
+                id="number1"
+                name="number1"
+                placeholder="Enter a First Number"
+              />
+            </p>
+
+            <label for="number2">Enter 2nd Number:</label>
+            <input
+              type="text"
+              name="number2"
+              id="number2"
+              placeholder="Enter a Second Number"
+            />
+            <br /><br />
+
+            
+            <input
+              type="button"
+              id="btnADD"
+              class="button"
+              value="Addition"
+              onclick="Operation('+')"
+            />
+            <input
+              type="button"
+              id="btnSUB"
+              class="button"
+              value="Subtraction"
+              onclick="Operation('-')"
+            />
+            <input
+              type="button"
+              id="btnMUL"
+              class="button"
+              value="Multiplication"
+              onclick="Operation('*')"
+            />
+            <input
+              type="button"
+              id="btnDIV"
+              class="button"
+              value="Division"
+              onclick="Operation('/')"
+            />
+            <!-- <input type="Reset" /> -->
+            <br /><br />
+
+            <label for="Result">Result:</label>
+            <div id="result"></div>
+          </form>
+        </fieldset>
+      </main>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#calcForm").validate({
+          // in 'rules' user have to specify all the constraints for respective fields
+          rules: {
+            number1: {
+              required: true,
+              no_type: true,
+            },
+            number2: {
+              required: true,
+              no_type: true,
+            },
+            number3: {
+              required: true,
+              no_type: true,
+            },
+          },
+          // in 'messages' user have to specify message as per rules
+          messages: {
+            number1: {
+              required: " Kindly enter a number for 1st input",
+            },
+            number2: {
+              required: " Kindly enter a number for 2nd input",
+            },
+            
+          },
+        });
+      });
+
+      jQuery.validator.addMethod(
+        "no_type",
+        function (value, element) {
+          return (
+            this.optional(element) || /^[+-]?([0-9]*[.])?[0-9]+$/.test(value)
+          );
+        },
+        " Kindly enter only valid numbers"
+      );
+    </script>
+    <script>
+      var user = GetURLParameter("userName");
+
+      function GetURLParameter(sParam) {
+        var sPageURL = window.location.search.substring(1);
+        var sURLVariables = sPageURL.split("&");
+        for (var i = 0; i < sURLVariables.length; i++) {
+          var sParameterName = sURLVariables[i].split("=");
+          if (sParameterName[0] == sParam) {
+            return sParameterName[1];
+          }
+        }
+      }
+
+      // console.log(user);
+
+      document.getElementById("username").innerHTML =
+        "Welcome " +
+        user +
+        " kindly enter the numbers below to use calculator";
+      var Operation = (operand) => {
+        var regExName = /^[+-]?([0-9]*[.])?[0-9]+$/;
+        var x, y, ans;
+        console.log(operand);
+        if (document.getElementById("number1").value.trim().length == 0) {
+          alert("1st Number is empty");
+          x = null;
+          // x = 0;
+        } else {
+          if (
+            document.getElementById("number1").value.trim().match(regExName)
+          ) {
+            x = parseFloat(document.getElementById("number1").value);
+          } else {
+            alert("Input type for Number 1 should be 'Number only'");
+          }
+        }
+        if (document.getElementById("number2").value.trim().length == 0) {
+          alert("2nd Number is empty");
+          y = null;
+          // y = 0;
+        } else {
+          if (
+            document.getElementById("number2").value.trim().match(regExName)
+          ) {
+            y = parseFloat(document.getElementById("number2").value);
+          } else {
+            alert("Input type for Number 2 should be 'Number only'");
+          }
+        }
+        
+        console.log(x);
+        console.log(y);
+        
+        if (x != null && y != null ) {
+          if (operand == "+") {
+            ans = x + y;
+            console.log(x + y);
+          } else if (operand == "-") {
+            ans = x - y;
+            console.log(x - y);
+          } else if (operand == "*") {
+            ans = x * y;
+            console.log(x * y);
+          } else {
+            if (x == 0 || y == 0) {
+              alert("Division by zero is not possible");
+              ans = "Infinity";
+            } else {
+              ans = x / y ;
+              console.log(x / y);
+            }
+          }
+          // document.getElementById("number1").value = "";
+          // document.getElementById("number2").value = "";
+          // document.getElementById("number3").value = "";
+
+          document.getElementById(
+            "result"
+          ).innerHTML = `<input type="text" value="${ans.toFixed(
+            2
+          )}" class="field left" readonly>`;
+        }
+      };
+
+      Operation(operand);
+    </script>
+  </body>
+</html>

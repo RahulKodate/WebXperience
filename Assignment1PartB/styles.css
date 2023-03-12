@@ -1,0 +1,79 @@
+body{
+    background-image: url(travelbackground.jpeg);
+    }
+    .wrapper{
+        width: 90%;
+        margin: auto;
+        background-color: #ffffff;
+        box-shadow: 10px 5 px 5 px #fff0e6 ;
+         opacity: 0.97;
+    }
+
+    header{
+        text-align: center;
+        background-color: #f3f98c;
+    }
+
+    header h1{
+        padding: 10px;
+        margin: 0px;
+        text-shadow: 2px 2px 5px #af998a;
+        color: #800066;
+    
+    }
+    nav{
+        float: right;
+        width: 250px;
+        padding: 10px;
+        position: static;
+    }
+    
+    a:link{
+        text-decoration: none;
+    }
+    main{
+        margin-right: 185px;
+        padding-left: 20px;
+        padding-right: 20px;
+        background-color: #f15c5c;
+        overflow: auto; 
+    }
+
+    footer{
+        text-align: center;
+        font-style: italic;
+        background-color: #f3f98c;
+        padding: 2px;
+       
+   }
+
+   .para2{
+    text-align: center;
+   }
+
+   .para3{
+        width: 80%;
+        margin: auto;
+        background-color: #ffffff;
+        box-shadow: 10px 5 px 5 px #fff0e6 ;
+        opacity: 0.97;
+   }
+
+   .para4{
+        margin-inline: 185px;
+        padding-left: 20px;
+        padding-right: 20px;
+        background-color: #ffffff;
+        overflow: auto; 
+
+   }
+
+   .para5{
+      float: left;
+        width: 250px;
+        padding: 10px;
+        position: static;
+   }
+
+
+    

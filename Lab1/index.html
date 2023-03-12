@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <tittle>Image Gallery</tittle>
+
+        <style>
+            header {
+                text-align: center;
+            }
+                #container{
+                    width: 80%;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+
+                .gallery {
+                    float: left;
+                    width: 150px;
+                    padding: 20px;
+                    margin: 20px;
+                    border: 1px solid red;
+                }
+
+                .gallery img {
+                    width: 150px;
+                    height: 150px;
+
+                }
+                
+                .gallery:hover {
+                    cursor: pointer;
+                    border-radius: 25px;
+                    box-shadow: 10px -10px gray;
+                    border: 1px solid gray;
+                }
+            
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>
+                Image Gallery
+            </h1>
+        </header>
+        
+        <div id="container">
+            <div class="gallery">
+                <a href="images/cap.png" target="_blank">
+                    <img src="images/cap.png " alt="Cap"/>
+                    <div> Cap </div>
+                </a>
+            </div>
+
+             
+            <div class="gallery">
+                <a href="images/football.png" target="_blank">
+                    <img src="images/football.png " alt="football"/>
+                    <div> Football </div>
+                </a>
+            </div>
+
+             
+            <div class="gallery">
+                <a href="images/shoes.png" target="_blank">
+                    <img src="images/shoes.png " alt="Shoes"/>
+                    <div> Shoes </div>
+                </a>
+            </div>
+             
+            <div class="gallery">
+                <a href="images/wallet.png" target="_blank">
+                    <img src="images/wallet.png " alt="wallet"/>
+                    <div> Wallet </div>
+                </a>
+            </div>
+        </div>
+    </body>
+
+</html>

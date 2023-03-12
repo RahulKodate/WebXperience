@@ -1,0 +1,150 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>Assignment 6 Part B</title>
+    <style>
+      #container {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        width: 800px;
+        margin: auto;
+        background-color: rgba(29, 93, 230, 0.892);
+      }
+      main {
+        padding: 40px;
+      }
+      body {
+        text-align: center;
+      }
+
+      #stopwatch {
+        font-size: 100px;
+        font-weight: 500;
+      }
+
+      #stopwatch span {
+        display: inline-block;
+        min-width: 100px;
+      }
+
+      button {
+            padding: 16px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.2s;
+            cursor: pointer;
+            background-color: rgb(249, 249, 26);
+            color: black;
+            border: 2px solid #8c7e7e;
+          }
+          button:hover {
+            background-color: #3df8629f;
+            color: white;
+          }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <main>
+        <h2 style="text-align: center">Assignment 6: Part B</h2>
+        <h3 style="text-align: center">Kinldy use the Stop Watch</h3>
+        <fieldset>
+          <legend style="text-align: left">Stop Watch</legend>
+          <br />
+          <div id="text-center">
+            <button id="startStopWatch">Start</button>
+            <button id="pauseStopWatch" disabled>Stop</button>
+            <button id="resetStopWatch" disabled>Reset</button>
+          </div>
+          <br>
+          <label id="stopwatch">
+            <span id="hours">00</span>:<span id="minutes">00</span>:<span
+              id="seconds"
+              >00</span
+            >
+          </label>
+         
+        </fieldset>
+      </main>
+    </div>
+    <!-- <script type="text/javascript" src="app1.js"></script> -->
+    <script>
+      let interval = null;
+      let secondsCount = 0;
+
+      const start_btn = document.getElementById("startStopWatch");
+      const stop_btn = document.getElementById("pauseStopWatch");
+      const reset_btn = document.getElementById("resetStopWatch");
+
+      var hours = document.getElementById("hours");
+      var minutes = document.getElementById("minutes");
+      var seconds = document.getElementById("seconds");
+
+      start_btn.addEventListener("click", startStopWatch);
+      stop_btn.addEventListener("click", pauseStopWatch);
+      reset_btn.addEventListener("click", resetStopWatch);
+
+      function stopWatch() {
+        secondsCount++;
+
+        let hrs = Math.floor(secondsCount / 3600);
+        let mins = Math.floor((secondsCount - hrs * 3600) / 60);
+        let secs = secondsCount % 60;
+
+        if (hrs < 10) {
+          hrs = "0" + hrs;
+        }
+
+        if (mins < 10) {
+          mins = "0" + mins;
+        }
+
+        if (secs < 10) {
+          secs = "0" + secs;
+        }
+
+        hours.innerHTML = `${hrs}`;
+        minutes.innerHTML = `${mins}`;
+        seconds.innerHTML = `${secs}`;
+      }
+
+      function startStopWatch() {
+        $("#pauseStopWatch").removeAttr("disabled");
+        $("#resetStopWatch").removeAttr("disabled");
+        $("#startStopWatch").attr({ disabled: "disabled" });
+
+        if (interval) {
+          return;
+        }
+
+        interval = setInterval(stopWatch, 1000);
+      }
+
+      function pauseStopWatch() {
+        $("#startStopWatch").removeAttr("disabled");
+        $("#pauseStopWatch").attr({ disabled: "disabled" });
+
+        clearInterval(interval);
+        interval = null;
+      }
+
+      function resetStopWatch() {
+        $("#startStopWatch").removeAttr("disabled");
+        $("#resetStopWatch").attr({ disabled: "disabled" });
+        $("#pauseStopWatch").attr({ disabled: "disabled" });
+
+        clearInterval(interval);
+        interval = null;
+        secondsCount = 0;
+        hours.innerHTML = "00";
+        minutes.innerHTML = "00";
+        seconds.innerHTML = "00";
+      }
+    </script>
+  </body>
+</html>

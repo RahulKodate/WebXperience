@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JS Lab</title>
+    <link rel="stylesheet" type="text/css" href="table.css" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <table id="myTable">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Book</th>
+          <th>Author</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <input type="checkbox" onclick="onCheckboxClick(this)"/>
+          </td>
+          <td>Book 1</td>
+          <td>Author 1</td>
+        </tr>
+      </tbody>
+    </table>
+    <br />
+    <br />
+    <button id="button" onclick="addNewRow()">Add New Book</button>
+  </body>
+</html>

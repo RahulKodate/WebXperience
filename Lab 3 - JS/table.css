@@ -1,0 +1,34 @@
+* {
+    margin: 0;
+    padding: 0;
+	text-align:center;
+}
+
+table input {
+	margin: 0 5px;
+}
+
+table {
+	border: 2px solid black;
+	border-collapse: collapse;
+	margin: 30px auto;
+}
+
+table td, th {
+	border: 1px solid black;
+	padding: 5px;
+}
+
+table th {
+	color: #fff;
+	background-color: black;
+}
+
+#button{	
+	border-radius: 3px;
+	margin: 0 auto;
+	background-color: orange;
+	border: 1px solid black;
+    padding: 5px;
+    cursor: pointer;
+}
