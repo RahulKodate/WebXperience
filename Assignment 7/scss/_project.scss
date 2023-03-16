@@ -1,0 +1,51 @@
+@import "config";
+.projectCard {
+  margin: 50px 20px;
+  display: grid;
+  height: 400px;
+  &:hover {
+    .projectCardInner {
+      transform: rotateY(180deg);
+    }
+  }
+}
+.projectCardInner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.projectCardFront {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  background-color: $project_front_background-color;
+}
+.projectCardBack {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  background-color: $project_back_background-color;
+  color: $project_color;
+  transform: rotateY(180deg);
+  h1 {
+    padding-top: 40px;
+  }
+}
+figure {
+  img {
+    width: 300px;
+    height: 300px;
+  }
+}
+figcaption {
+  padding-top: 35px;
+  color: $project_color;
+}

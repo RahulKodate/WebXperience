@@ -1,0 +1,110 @@
+// $color_1: #000;
+@import "config";
+@media screen and (max-width: 912px) {
+  .projectCard {
+    width: 40%;
+    height: 400px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .aboutSection {
+    display: block;
+    img {
+      width: 400px;
+    }
+  }
+  .about {
+    width: 100%;
+    h1 {
+      font-size: 40px;
+    }
+  }
+  h2 {
+    font-size: 40px;
+  }
+  .skillsImageCard {
+    img {
+      width: 200px;
+      height: 200px;
+    }
+  }
+  .skillsLangCard {
+    img {
+      width: 60px;
+      height: 60px;
+      margin: 10px;
+    }
+  }
+  .projectCard {
+    width: 50%;
+    height: 400px;
+  }
+  figure {
+    img {
+      width: 300px;
+      height: 300px;
+    }
+  }
+  figcaption {
+    margin: 10px;
+    padding-top: 35px;
+  }
+  .contactImage {
+    img {
+      width: 200px;
+      height: 400px;
+    }
+  }
+  .contactDetails {
+    img {
+      padding: 30px;
+      width: 110px;
+      height: 110px;
+    }
+    width: 100%;
+    margin-top: 0px;
+  }
+  .sectionTitle {
+    .flipping {
+      span {
+        font-size: 20px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 550px) {
+  .projectCard {
+    width: 100%;
+    height: 400px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .skillsLangCard {
+    img {
+      width: 40px;
+      height: 40px;
+    }
+  }
+  .projectCard {
+    width: 100%;
+    height: 400px;
+  }
+  figure {
+    img {
+      width: 200px;
+      height: 200px;
+    }
+  }
+  figcaption {
+    margin: 10px;
+    padding-top: 30px;
+    // color: $color_1;
+  }
+}
+@media screen and (max-width: 375px) {
+  .aboutSection {
+    img {
+      width: 275px;
+    }
+  }
+}

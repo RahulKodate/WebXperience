@@ -1,0 +1,30 @@
+$about_color: #000;
+$animation_color: black;
+$background_card_color: gray;
+$experience_text_color: #55198b;
+$footer_color: #55198b;
+$footer_background_color: #bbb;
+$nav_textcolor: black;
+$nav_hover: #55198b;
+$project_color: black;
+$project_front_background-color: #bbb;
+$project_back_background-color: skyblue;
+$color: #55198b;
+$font-family: Georgia, "Times New Roman", Times, serif;
+$scrollbar_background-color: #55198b;
+$scrollbar_background-color2: #a4acc4;
+$button-hover-color: #555555;
+$button-hover-color2: white;
+
+@function set-background-color($color) {
+  @if (lightness($color) > 70) {
+    @return #{$button-hover-color};
+  } @else {
+    @return #fff;
+  }
+}
+
+@mixin set-background($color) {
+  color: #{$button-hover-color2};
+  background-color: set-background-color($color);
+}

@@ -1,0 +1,12 @@
+@import "config";
+.footerSection {
+  $size: 10px;
+  font-size: 20px;
+  margin-top: $size;
+  padding: $size;
+  text-align: center;
+  color: $footer_color;
+  overflow: auto;
+  width: 100%;
+  background-color: $footer_background_color;
+}
