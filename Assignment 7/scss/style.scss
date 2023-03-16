@@ -1,0 +1,35 @@
+@import "about";
+@import "animation";
+@import "config";
+@import "contact";
+@import "experience";
+@import "footer";
+@import "mobile";
+@import "navbar";
+@import "project";
+@import "skills";
+@import "utilities";
+@import "button";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $font-family;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  color: $color;
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $scrollbar_background-color;
+    border-radius: 40px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: $scrollbar_background-color2;
+  }
+}

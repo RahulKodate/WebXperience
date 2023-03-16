@@ -1,0 +1,431 @@
+.aboutSection {
+  display: flex;
+  padding: 30px 0;
+  margin: 0 auto;
+}
+.aboutSection img {
+  margin-top: 30px;
+  width: 100%;
+  height: 450px;
+}
+.aboutSection .about {
+  margin-top: 100px;
+  width: 60%;
+  margin-right: 50px;
+  margin-left: 25px;
+}
+.aboutSection .about h1,
+.aboutSection .about h2 {
+  padding: 10px;
+  font-size: 45px;
+  color: #000;
+}
+.aboutSection .about p {
+  font-size: 23px;
+}
+
+/* h2 span:nth-child(1) {
+  animation: fade-in 2s infinite cubic-bezier(0.11, 0, 0.5, 0);
+}
+h2 span:nth-child(2) {
+  animation: fade-in 2s infinite cubic-bezier(0.11, 0, 0.5, 0);
+}
+h2 span:nth-child(3) {
+  animation: fade-in 2s infinite cubic-bezier(0.11, 0, 0.5, 0);
+} */
+@-webkit-keyframes fade-in {
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+@keyframes fade-in {
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+@-webkit-keyframes flip {
+  0%, 60% {
+    transform: rotateX(360deg);
+  }
+}
+@keyframes flip {
+  0%, 60% {
+    transform: rotateX(360deg);
+  }
+}
+.about span {
+  display: inline-block;
+  opacity: 0;
+  filter: blur(5px);
+}
+
+span::nth-child(1) {
+  -webkit-animation: fade-in 0.8s 0.3s forwards cubic-bezier(0.11, 0, 0.5, 0);
+          animation: fade-in 0.8s 0.3s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span::nth-child(2) {
+  -webkit-animation: fade-in 0.8s 0.3s forwards cubic-bezier(0.11, 0, 0.5, 0);
+          animation: fade-in 0.8s 0.3s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span::nth-child(3) {
+  -webkit-animation: fade-in 0.8s 0.3s forwards cubic-bezier(0.11, 0, 0.5, 0);
+          animation: fade-in 0.8s 0.3s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+p span:nth-child(1) {
+  -webkit-animation: fade-in 0.8s 1.3s forwards cubic-bezier(0.11, 0, 0.5, 0);
+          animation: fade-in 0.8s 1.3s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+.sectionTitle h1 {
+  padding: 10px;
+  margin-top: 20px;
+  text-align: center;
+}
+.sectionTitle .flipping span {
+  display: inline-block;
+  font-size: 40px;
+  color: black;
+  -webkit-animation: flip 7s infinite;
+          animation: flip 7s infinite;
+  -webkit-animation-delay: calc(0.2s * var(--i));
+          animation-delay: calc(0.2s * var(--i));
+}
+
+.line {
+  width: 150px;
+  height: 6px;
+  background: #5fd239;
+  margin: 5px auto;
+  border-radius: 5px;
+}
+
+span:nth-child(1) {
+  -webkit-animation: fade-in 0.8s 0.3s forwards cubic-bezier(0.11, 0, 0.5, 0);
+          animation: fade-in 0.8s 0.3s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+span:nth-child(2) {
+  -webkit-animation: fade-in 0.8s 0.7s forwards cubic-bezier(0.11, 0, 0.5, 0);
+          animation: fade-in 0.8s 0.7s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+span:nth-child(3) {
+  -webkit-animation: fade-in 0.8s 0.9s forwards cubic-bezier(0.11, 0, 0.5, 0);
+          animation: fade-in 0.8s 0.9s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+.contacts {
+  margin-top: 50px;
+}
+
+.contactDetails {
+  float: right;
+  width: 60%;
+  margin-top: 100px;
+}
+
+.contactDetails Img {
+  padding: 30px;
+  width: 150px;
+  height: 150px;
+}
+
+.contactImage Img {
+  float: left;
+  margin-left: 50px;
+  width: 400px;
+  height: 400px;
+}
+
+.experienceLayout {
+  padding-top: 50px;
+  border-left: 2px solid #e42e2e;
+}
+
+.experienceCard {
+  position: relative;
+  margin: 0 0 20px 20px;
+  padding: 10px;
+  background: #f08a52;
+  color: rgb(228, 48, 48);
+  border-radius: 8px;
+}
+
+.companyName {
+  color: #4dc82b;
+  position: relative;
+}
+.companyName::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: rgb(151, 37, 218);
+  border-radius: 999px;
+  left: -39px;
+  border: 3px solid #46ee2c;
+}
+
+.footerSection {
+  font-size: 25px;
+  margin-top: 30px;
+  padding: 30px;
+  text-align: center;
+  color: rgb(240, 31, 31);
+  overflow: auto;
+  width: 100%;
+  background-color: #1ef045;
+}
+
+@media screen and (max-width: 912px) {
+  .projectCard {
+    width: 40%;
+    height: 400px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .aboutSection {
+    display: block;
+  }
+  .aboutSection img {
+    width: 400px;
+  }
+  .about {
+    width: 100%;
+  }
+  .about h1 {
+    font-size: 40px;
+  }
+  h2 {
+    font-size: 40px;
+  }
+  .skillsImageCard img {
+    width: 200px;
+    height: 200px;
+  }
+  .skillsLangCard img {
+    width: 60px;
+    height: 60px;
+    margin: 10px;
+  }
+  .projectCard {
+    width: 50%;
+    height: 400px;
+  }
+  figure img {
+    width: 300px;
+    height: 300px;
+  }
+  figcaption {
+    margin: 10px;
+    padding-top: 35px;
+  }
+  .contactImage img {
+    width: 200px;
+    height: 400px;
+  }
+  .contactDetails {
+    width: 100%;
+    margin-top: 0px;
+  }
+  .contactDetails img {
+    padding: 30px;
+    width: 110px;
+    height: 110px;
+  }
+  .sectionTitle .flipping span {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .projectCard {
+    width: 100%;
+    height: 400px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .skillsLangCard img {
+    width: 40px;
+    height: 40px;
+  }
+  .projectCard {
+    width: 100%;
+    height: 400px;
+  }
+  figure img {
+    width: 200px;
+    height: 200px;
+  }
+  figcaption {
+    margin: 10px;
+    padding-top: 30px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .aboutSection img {
+    width: 275px;
+  }
+}
+header nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+nav ul li {
+  display: inline-block;
+  list-style: none;
+  margin: 10px 20px;
+}
+nav a {
+  text-decoration: none;
+  color: black;
+  font-size: 23px;
+}
+nav a:hover {
+  color: #a4ee25;
+  font-weight: bolder;
+}
+
+.projectCard {
+  margin: 50px 20px;
+  display: grid;
+  height: 400px;
+}
+.projectCard:hover .projectCardInner {
+  transform: rotateY(180deg);
+}
+
+.projectCardInner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.projectCardFront {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  background-color: #25e638;
+}
+
+.projectCardBack {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  background-color: rgb(58, 219, 61);
+  color: black;
+  transform: rotateY(180deg);
+}
+.projectCardBack h1 {
+  padding-top: 40px;
+}
+
+figure img {
+  width: 300px;
+  height: 300px;
+}
+
+figcaption {
+  padding-top: 35px;
+  color: black;
+}
+
+.skills {
+  display: flex;
+  margin-top: 50px;
+}
+
+.skillsImageCard img {
+  float: left;
+  width: 400px;
+  height: 400px;
+}
+
+.skillsLangCard {
+  width: 60%;
+}
+
+.skillsLangCard img {
+  float: right;
+  width: 100px;
+  height: 100px;
+  margin: 20px;
+}
+
+.container {
+  padding: 20px 30px;
+}
+
+/* header {
+  position: sticky;
+  top: 0;
+} */
+.logoname {
+  width: 240px;
+}
+
+p {
+  padding: 10px;
+  text-align: center;
+  font-size: 20px;
+  color: #fae01e;
+}
+
+.btn-project {
+  background-color: rgb(57, 232, 57);
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.btn-project {
+  color: black;
+  border: 2px solid #eb3434;
+}
+.btn-project:hover {
+  color: rgb(232, 62, 62);
+  background-color: #3632eb;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: #4eee53;
+}
+body::-webkit-scrollbar {
+  width: 10px;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: #f5db6a;
+  border-radius: 50px;
+}
+body::-webkit-scrollbar-track {
+  background-color: #eae7e2;
+}/*# sourceMappingURL=style.css.map */
