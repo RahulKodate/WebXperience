@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Node JS and Mongo DB Lab</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  </head>
+
+  <body>
+    <div>
+      <form>
+        Enter text and hit enter:
+        <input type="text" id="mess" name="mes" />
+        <input type="submit" id="buttonClick" value="Submit" />
+      </form>
+      <h1>Data is displayed below</h1>
+      <h4 id="text"></h4>
+    </div>
+    <script type="text/javascript">
+      $(function () {
+        populateText();
+        $("#buttonClick").click(function (e) {
+          e.preventDefault();
+
+          var mes = document.getElementById("mess").value;
+          var data = {};
+          data.message = mes;
+
+          $.ajax({
+            type: "POST",
+            data: JSON.stringify(data),
+            contentType: "application/json",
+            url: "http://localhost:8080/api/insert",
+            success: function (result) {
+              console.log("success");
+              $.get("http://localhost:8080/api/show", function (data, status) {
+                $("h4").append(data[data.length - 1].message + "<br/>");
+                $("#mess").val("");
+              });
+            }
+          });
+        });
+      });
+
+      function populateText() {
+        $.get("http://localhost:8080/api/show", function (data, status) {
+          $.each(data, function (i, item) {
+            $("h4").append(data[i].message + "<br/>");
+          });
+        });
+      }
+    </script>
+  </body>
+</html>
+
+
+
+
+
+
+
